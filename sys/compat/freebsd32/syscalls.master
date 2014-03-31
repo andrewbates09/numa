@@ -1065,3 +1065,23 @@
 				    uint32_t id1, uint32_t id2, int com, \
 				    void *data); }
 #endif
+545	AUE_NULL	STD	{ int cpuset_get_memory_affinity( \
+				    cpulevel_t level, cpuwhich_t which, \
+				    id_t id, size_t setsize, cpuset_t *mask, \
+				    int *policy); }
+546	AUE_NULL	STD	{ int cpuset_set_memory_affinity( \
+				    cpulevel_t level, cpuwhich_t which, \
+				    id_t id, const cpuset_t *mask, \
+				    int policy);}
+547	AUE_NULL	STD	{ int move_pages( int pid, unsigned long count, \
+				    void **pages, const int *node, 
+				    int move_flag); }
+					int *status, \
+548	AUE_NULL	STD	{ int migrate_pages( int pid, \
+				    unsigned long maxnode, \
+				    const unsigned long *old_nodes, \
+				    const unsigned long *new_nodes); }
+549	AUE_NULL	STD	{ size_t get_numa_cpus( cpuset_t *buff, \
+				    size_t length); }
+550	AUE_NULL	STD	{ size_t get_numa_weights( short *buff, \
+				    size_t length); }
