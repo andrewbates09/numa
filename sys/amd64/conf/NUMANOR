@@ -1,5 +1,5 @@
 #
-# GENERIC -- Generic kernel configuration file for FreeBSD/amd64
+# NUMANOR -- NUMA kernel configuration file for FreeBSD/amd64
 #
 # For more information on this file, please read the config(5) manual page,
 # and/or the handbook section on Kernel Configuration Files:
@@ -350,3 +350,6 @@ device		xenpci		# Xen HVM Hypervisor services driver
 
 # VMware support
 device		vmx		# VMware VMXNET3 Ethernet
+
+# NUMA memory domain support
+options		MAXMEMDOM=4	# Expose some memory domains
