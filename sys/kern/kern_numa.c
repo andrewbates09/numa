@@ -175,12 +175,14 @@ sys_get_numa_weights(struct thread *td, struct get_numa_weights_args *uap)
 	    return vm_ndomains;
 
     for(int i = 0; i < vm_ndomains; i++) {
-	    // Fill with sample data
+    	for(int j = 0, j < vm_ndomains, j++) {
+	    // Fill with sample data	
 	    if(i == j) {
 		domain_map[i][j] = 0;
 	    } else {
 		domain_map[i][j] = 1;
 	    }
+    	}
     }
     // Copy memory to userspace
     fail = copy_to_user(uap->buffer, domain_map, sizeof(short) * vm_domains * vm_domains);
